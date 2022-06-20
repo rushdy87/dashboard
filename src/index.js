@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 import App from "./App";
+import { ContextProvider } from "./context/context-provider";
 import { registerLicense } from "@syncfusion/ej2-base";
 
 registerLicense(
@@ -11,4 +12,8 @@ registerLicense(
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(
+  <ContextProvider>
+    <App />
+  </ContextProvider>
+);
