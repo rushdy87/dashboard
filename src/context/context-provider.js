@@ -30,7 +30,8 @@ export const ContextProvider = ({ children }) => {
   };
 
   const handleClick = (clicked) =>
-    setIsClicked({ ...initialState, [clicked]: true });
+    setIsClicked((prev) => ({ ...prev, [clicked]: !prev[clicked] }));
+  // setIsClicked({ ...initialState, [clicked]: true });
 
   return (
     <StateContext.Provider
